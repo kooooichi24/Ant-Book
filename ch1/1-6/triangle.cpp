@@ -23,7 +23,7 @@ void solve() {
       }
     }
   }
-    printf("%d\n", ans);
+  printf("%d\n", ans);
 }
 
 int main() {
