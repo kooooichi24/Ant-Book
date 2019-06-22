@@ -8,22 +8,16 @@ using namespace std;
 int S, K;
 
 void solve() {
-  int answer = 0;
+  int count = 0;
   int sum = 0;
 
-  for (int X = 0; X <= K; X++){
-    for (int Y = 0; Y <= K; Y++){
-      for (int Z = 0; Z <= K; Z++){
-        
-        sum = X + Y + Z;
-        if (sum == S){
-          answer++;
-        }
-      }
+  for (int i = 0; i <= K; i++){
+    for (int j = 0; j <= K; j++){
+      if (i + j + K >= S && i + j <= S) count++; 
     }
   }
 
-  printf("%d", answer);
+  printf("%d", count);
 }
 
 int main() {
