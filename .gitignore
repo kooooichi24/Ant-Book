@@ -1,4 +1,6 @@
 .vscode/
 /ch[0-9]/[0-9]-[0-9]/build/
 /ch[0-9]/practice/build/
+
+# .in拡張子ファイルをgit管理から除外
 *.in
