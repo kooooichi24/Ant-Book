@@ -25,6 +25,11 @@ void push(int x) {
   }
 
   heap[i] = x;
+
+  for (int j = 0; j < size; j++) {
+    printf("%d", heap[j]);
+  }
+  printf("\n");
 }
 
 int pop() {
@@ -56,5 +61,13 @@ int pop() {
 }
 
 int main() {
-
+  push(0);
+  push(4);
+  push(2);
+  push(3);
+  push(1);
+  printf("%d\n", pop());
+  printf("%d\n", pop());
+  printf("%d\n", pop());
+  printf("%d\n", pop());
 }
