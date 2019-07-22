@@ -1,6 +1,6 @@
 /**
  * Copy all the contents of int a[10] to int b[10].
- * Use the pointer to display contents of b.
+ * Use the pointer to display contents of b in descending order.
  */
 
 #include <cstdio>
@@ -16,12 +16,14 @@ int main() {
   p = a;
   q = b;
 
-  while(p < a + 10) {
-    *q = *p;
-    p++, q++;
+  while(p < a + 11) {
+    p++;
+    *q = *(p-1);
+    q++;
   }
-  for (q = a; q < a + 10; q++) {
-    printf("%4d", *q);
+
+  for (int i = 0; i < 10; i++) {
+    printf("%d ", b[i]);
   }
 
   return 0;
