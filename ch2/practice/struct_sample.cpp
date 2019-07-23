@@ -27,6 +27,8 @@ int main() {
   printf("p2 is %s %c %d %f %f\n", p2.name, p2.sex, p2.age, p2.height, p2.weight);
 
   // size of structure
+  printf("name=%d, sex=%d, age=%d, height=%d, weight=%d\n",
+         sizeof(p2.name), sizeof(p2.sex), sizeof(p2.age), sizeof(p2.height), sizeof(p2.weight));
   printf("persno_t=%d", sizeof(p2));
 
   return 0;
