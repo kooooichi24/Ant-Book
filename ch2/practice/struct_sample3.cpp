@@ -33,8 +33,23 @@ complex_t addComplex(complex_t a, complex_t b) {
  * 2. The contents of the structre outside the function can be changed inside the function.
  */
 void addComplexPtr(complex_t *a, complex_t *b, complex_t *c) {
+  /**
+   * direct reference
+   * 
+   * The operater "." for directly referencing structure members 
+   * are called "member direct reference operaters" or simply "member reference operators" or "dot operators".
+   */
   (*c).re = (*a).re + (*b).re;
   (*c).im = (*a).im + (*b).im;
+
+  /**
+   * indirect reference
+   * 
+   * The operater "->" for indirectly referencing structure members
+   * are called "member indirect reference operaters" or "allow operaters".
+   */
+  // c->re = a->re + b->re;
+  // c->im = a->im + b->im;
 }
 
 int main() {
