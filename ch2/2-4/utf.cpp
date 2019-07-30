@@ -1,10 +1,11 @@
 #include <cstdio>
 #include <algorithm>
 #include <bits/stdc++.h>
-using namespace std;
+// using namespace std; 
 
 const int MAX_N = INT_MAX;
 int parent[MAX_N];
+int rank[MAX_N];
 
 // initialize with n emelent.
 void init(int n) {
@@ -16,8 +17,11 @@ void init(int n) {
 
 // seek the root of a tree
 int find(int x) {
-  if (parent[x] == x) return x;
-  else parent[x] == find(parent[x]);
+  if (parent[x] == x) {
+    return x;
+  } else {
+    return parent[x] = find(parent[x]);
+  }
 }
 
 // merge sets to which x and y belong
