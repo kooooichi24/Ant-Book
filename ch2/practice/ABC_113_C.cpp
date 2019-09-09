@@ -6,25 +6,27 @@ typedef long long ll;
 int main() {
   int n, m;
   cin >> n >> m;
-  vector<vector<ll>> py(n);
-  vector<ll> pp(m), yy(m);
+  vector<pair<int, int>> py[n];
   rep(i,m) {
-    ll p, y;
+    int p, y;
     cin >> p >> y;
     p--;
-    py[p].push_back(y);
-    pp[i] = p;
-    yy[i] = y;
+    py[p].push_back({y,i});
   }
 
 
   rep(i,n) {
     sort(py[i].begin(), py[i].end());
   }
+  pair<int, int> ans[m];
+  rep(i,n) {
+    rep(j,py[i].size()) {
+      ans[py[i][j].second] = {i+1, j+1};
+    }
+  }
   rep(i,m) {
-    auto result = find(py[pp[i]].begin(), py[pp[i]].end(), yy[i]);
-    size_t index = distance(py[pp[i]].begin(), result);
-    cout << setw(6) << setfill('0') << pp[i]+1 << setw(6) << setfill('0') << index+1 << "\n";
+    cout << setw(6) << setfill('0') << ans[i].first;
+    cout << setw(6) << setfill('0') << ans[i].second << "\n";
   }
   return 0;
 }
